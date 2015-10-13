@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Dashboard</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="dashBoardApp" ng-init="charts=[[8, 3, 7],[2, 5, 9],[6, 2, 3],[2, 2, 5]]">
 
 <%= yield %>
 
