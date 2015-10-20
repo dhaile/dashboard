@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="dashBoardApp" ng-init="charts=[[8, 3, 7],[2, 5, 9],[6, 2, 3],[2, 2, 5]]">
+<body ng-app="dashBoardApp" ng-init="charts=[[8, 3, 7],[2, 5, 9],[6, 2, 3],[2, 2, 5]]" class="ng-scope">
 
 <%= yield %>
 
