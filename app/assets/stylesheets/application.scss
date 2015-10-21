@@ -2,9 +2,15 @@
  * bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables
  *
  */
+$navbar-height:                    80px !default;
+$navbar-default-color:             white !default;
+$navbar-default-bg:                #1E90FF !default;
+$navbar-default-link-color:                white !default;
+$navbar-default-link-active-color:         white !default;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+// Typographic mixin
 $p-font-sizes: (
   null  : 15px,
   480px : 16px,
@@ -28,7 +34,8 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 70px;
-  background-color: #f9f5f5;
+  background-color: maroon;
+  color:floralwhite;
 }
 
 #test1 > div > div:nth-child(1) > hello-world > div{
@@ -73,4 +80,13 @@ body {
 
 p {
   @include font-size($p-font-sizes);
+}
+
+
+
+#login_container{
+
+  margin-top: 140px;
+  margin-left: 80px;
+  margin-right:80px;
 }

@@ -8,106 +8,134 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">LA City</a>
+      <%=link_to "LA City", "http://www.lacity.org/",class: "navbar-brand", data: { confirm: "Are you sure?" } %>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Data</a></li>
+        <li class="active">
+          <a href="#"><strong>Home</strong><span class="sr-only">(current)</span></a></li>
+        <li>
+
+
+          <%=link_to "Data", "http://data.lacity.org/", data: { confirm: "Are you sure?" } %>
+
+
+        </li>
 
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Logout</a></li>
+        <li>
+          <%= link_to destroy_user_session_path, :method => :delete do %>
+              <span class="glyphicon glyphicon-user"></span> <strong>logout</strong>
+          <% end %>
+        </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools
+            <span class="glyphicon glyphicon-cog"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">setting</a></li>
             <li><a href="#">Learn</a></li>
-            
+
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">Help</a></li>
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
 </nav>
+<%= notice %>
+<div class="container-fluid">
+  <donut-chart data="chart" ng-repeat="chart in charts"></donut-chart>
+</div>
 
- <div class="container-fluid"><donut-chart data="chart" ng-repeat="chart in charts"></donut-chart></div>
-
-  <div class="container">
-<div id="test1">
- <div class="row">
-  <div class="col-md-6"><hello-world data="chart"></hello-world></div>
-  <div class="col-md-6"><hello-world data="chart"></hello-world></div>
-</div>
-</div>
-</div>
-    <div class="container">
+<div class="container">
+  <div id="test1">
     <div class="row">
-      <div class="col-xs-6 col-sm-4"><div class="panel panel-default">
+      <div class="col-md-6">
+        <hello-world data="chart"></hello-world>
+      </div>
+      <div class="col-md-6">
+        <hello-world data="chart"></hello-world>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-sm-4">
+      <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Panel for LAPD Data</h3>
         </div>
         <div class="panel-body">
           <bar-graph data="chart"></bar-graph>
         </div>
-      </div></div>
-      <div class="col-xs-6 col-sm-4"><div class="panel panel-default">
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+      <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Panel LAFD</h3>
         </div>
         <div class="panel-body">
           ...Loading
         </div>
-      </div></div>
-      <!-- Optional: clear the XS cols if their content doesn't match in height -->
-      <div class="clearfix visible-xs-block"></div>
-      <div class="col-xs-6 col-sm-4"><div class="panel panel-default">
+      </div>
+    </div>
+    <!-- Optional: clear the XS cols if their content doesn't match in height -->
+    <div class="clearfix visible-xs-block"></div>
+    <div class="col-xs-6 col-sm-4">
+      <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Panel for DWP waiting time</h3>
         </div>
         <div class="panel-body">
           ...Loading
         </div>
-      </div></div>
-    </div>
-
-
-
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-8"><div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Panel Heat-map</h3>
-          </div>
-          <div class="panel-body" id="mapContainer">
-            <map data="chart"></map>
-          </div>
-        </div></div>
-        <div class="col-xs-6 col-md-4"><div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Panel </h3>
-          </div>
-          <div class="panel-body">
-            ...Loading
-          </div>
-        </div></div>
       </div>
-
-
-
-      <footer class="footer">
-      <div class="container">
-        <p class="text-muted">City of Los Angeles</p>
-      </div>
-    </footer>
-
-
-
     </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel Heat-map</h3>
+        </div>
+        <div class="panel-body" id="mapContainer">
+          <map data="chart"></map>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel </h3>
+        </div>
+        <div class="panel-body">
+          ...Loading
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted">City of Los Angeles</p>
+    </div>
+  </footer>
+
+
+
 
 
     
