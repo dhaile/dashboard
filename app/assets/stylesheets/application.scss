@@ -5,8 +5,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-
+$p-font-sizes: (
+  null  : 15px,
+  480px : 16px,
+  640px : 17px,
+  1024px: 19px
+);
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -27,7 +31,7 @@ body {
   background-color: #f9f5f5;
 }
 
-#test1 > hello-world > div{
+#test1 > div > div:nth-child(1) > hello-world > div{
 	font: 10px sans-serif;
 	background-color: steelblue;
 	text-align: right;
@@ -36,4 +40,37 @@ body {
 	color: white;
 	border-style: solid;
     border-width: 5px;
+}
+#test1 > div > div:nth-child(2) > hello-world > div{
+	font: 10px sans-serif;
+	background-color: green;
+	text-align: right;
+	padding: 3px;
+	margin: 1px;
+	color: white;
+	border-style: solid;
+    border-width: 5px;
+}
+
+
+
+
+
+
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+
+p {
+  @include font-size($p-font-sizes);
 }

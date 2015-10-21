@@ -15,18 +15,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Data</a></li>
 
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Logout</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">setting</a></li>
+            <li><a href="#">Learn</a></li>
+            
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
@@ -35,15 +35,17 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-  
-    <div class="container-fluid"><donut-chart data="chart" ng-repeat="chart in charts"></donut-chart></div>
+
+ <div class="container-fluid"><donut-chart data="chart" ng-repeat="chart in charts"></donut-chart></div>
+
+  <div class="container">
 <div id="test1">
-
-    <hello-world data="chart"></hello-world>
-
-
+ <div class="row">
+  <div class="col-md-6"><hello-world data="chart"></hello-world></div>
+  <div class="col-md-6"><hello-world data="chart"></hello-world></div>
 </div>
-
+</div>
+</div>
     <div class="container">
     <div class="row">
       <div class="col-xs-6 col-sm-4"><div class="panel panel-default">
@@ -73,6 +75,9 @@
         </div>
       </div></div>
     </div>
+
+
+
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-8"><div class="panel panel-default">
           <div class="panel-heading">
@@ -91,11 +96,17 @@
           </div>
         </div></div>
       </div>
+
+
+
       <footer class="footer">
       <div class="container">
         <p class="text-muted">City of Los Angeles</p>
       </div>
     </footer>
+
+
+
     </div>
 
 
